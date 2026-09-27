@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Voice Companion</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>Voice Companion</h1>
+            <div id="status-label">Ready to listen</div>
+        </header>
+
+        <main>
+            <div class="orb-container">
+                <div id="voice-orb" class="orb"></div>
+            </div>
+
+            <div id="transcript" class="transcript">
+                <p class="instruction">Tap the microphone to start speaking.</p>
+            </div>
+
+            <div class="controls">
+                <button id="mic-btn" class="btn-primary">🎤</button>
+                <button id="stop-btn" class="btn-secondary">⏹️</button>
+                <button id="clear-btn" class="btn-secondary">🗑️</button>
+            </div>
+        </main>
+
+        <section id="settings" class="settings">
+            <h3>Settings</h3>
+            <label>
+                Rate: <input type="range" id="rate" min="0.5" max="2" step="0.1" value="1">
+            </label>
+            <label>
+                Volume: <input type="range" id="volume" min="0" max="1" step="0.1" value="1">
+            </label>
+            <button id="reset-settings" class="btn-text">Reset Settings</button>
+        </section>
+    </div>
+    <script src="js/app.js"></script>
+</body>
+</html>
