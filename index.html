@@ -8,37 +8,55 @@
 </head>
 <body>
     <div class="app-container">
-        <header>
-            <h1>Voice Companion</h1>
-            <div id="status-label">Ready to listen</div>
-        </header>
+        <main id="main-content">
+            <!-- Pages will be injected here -->
+            <section id="page-home" class="page active">
+                <h1>Voice Companion</h1>
+                <p>What would you like to do today?</p>
+                <div class="orb-container"><div class="orb"></div></div>
+                <button class="btn-gold" onclick="navigateTo('page-live')">Start Live Conversation</button>
+                <button class="btn-outline" onclick="navigateTo('page-chat')">Open Chat</button>
+            </section>
 
-        <main>
-            <div class="orb-container">
-                <div id="voice-orb" class="orb"></div>
-            </div>
+            <section id="page-chat" class="page">
+                <header><h2>Chat</h2></header>
+                <div id="chat-area" class="chat-area"></div>
+                <div class="chat-input">
+                    <input type="text" placeholder="Message Voice Companion...">
+                    <button>Send</button>
+                </div>
+            </section>
 
-            <div id="transcript" class="transcript">
-                <p class="instruction">Tap the microphone to start speaking.</p>
-            </div>
+            <section id="page-live" class="page">
+                <header><h2>Live Conversation</h2></header>
+                <div class="orb-container"><div id="voice-orb" class="orb"></div></div>
+                <div id="status-label">Ready</div>
+                <div class="controls">
+                    <button id="mic-btn">🎤</button>
+                    <button id="stop-btn">⏹️</button>
+                </div>
+            </section>
 
-            <div class="controls">
-                <button id="mic-btn" class="btn-primary">🎤</button>
-                <button id="stop-btn" class="btn-secondary">⏹️</button>
-                <button id="clear-btn" class="btn-secondary">🗑️</button>
-            </div>
+            <section id="page-about" class="page">
+                <h2>About</h2>
+                <p>Voice Companion v1.0.0</p>
+                <p>A premium AI assistant experience.</p>
+            </section>
+
+            <section id="page-settings" class="page">
+                <h2>Settings</h2>
+                <label>Rate: <input type="range" id="rate" min="0.5" max="2" step="0.1" value="1"></label>
+                <label>Volume: <input type="range" id="volume" min="0" max="1" step="0.1" value="1"></label>
+            </section>
         </main>
 
-        <section id="settings" class="settings">
-            <h3>Settings</h3>
-            <label>
-                Rate: <input type="range" id="rate" min="0.5" max="2" step="0.1" value="1">
-            </label>
-            <label>
-                Volume: <input type="range" id="volume" min="0" max="1" step="0.1" value="1">
-            </label>
-            <button id="reset-settings" class="btn-text">Reset Settings</button>
-        </section>
+        <nav class="bottom-nav">
+            <button onclick="navigateTo('page-home')">🏠<br>Home</button>
+            <button onclick="navigateTo('page-chat')">💬<br>Chat</button>
+            <button onclick="navigateTo('page-live')">🎙️<br>Live</button>
+            <button onclick="navigateTo('page-about')">ℹ️<br>About</button>
+            <button onclick="navigateTo('page-settings')">⚙️<br>Settings</button>
+        </nav>
     </div>
     <script src="js/app.js"></script>
 </body>
